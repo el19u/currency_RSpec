@@ -1,13 +1,22 @@
 class Dollar
-  def initialize(local_dollar)
-    @local_dollar = local_dollar
+  def initialize(usd_dollar, chf_dollar)
+    @usd_dollar = usd_dollar
+    @chf_dollar = chf_dollar
   end
 
-  def to_chf
-    @local_dollar *= 0.5
+  def to_CHF
+    @usd_dollar *= 0.5
+  end
+
+  def to_USD
+    @usd_dollar = @chf_dollar * 2
+  end
+
+  def chf_usd
+    @usd_dollar += @chf_dollar
   end
 
   def money
-    @local_dollar
+    @usd_dollar
   end
 end
